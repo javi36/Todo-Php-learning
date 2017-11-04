@@ -1,5 +1,4 @@
 <?php
-include_once "SQLite3";
 /**
  * Created by PhpStorm.
  * User: jmart
@@ -22,14 +21,23 @@ class DatabaseManager
     public static function saveTodo($name)
     {
         $connection = self::getConnection();
-        $statement = $connection->prepare("insert into TODO VALUES (NULL, ?)");
-        $statement->bindParam($name);
-        $statement->execute();
+        $statement = $connection->prepare('insert into TODO (NAME) VALUES (:ToDoName)');
+        $statement->bindParam(":ToDoName", $name);
+        var_dump($statement->execute());
     }
 
-    public static function readAllToDOs(){
+    public static function readAllToDOs(): array {
+        $todoIndex = 0;
+        $toDos = array();
         $connection = self::getConnection();
-        $result = sqlite_array_query($connection, "Select name from TODO", SQLITE_ASSOC);
-        var_dump($result);
+        $statement = $connection->prepare("Select name from TODO");
+        $result = $statement->execute();
+        while($row = $result->fetchArray(SQLITE3_ASSOC)) {
+            $toDos[$todoIndex] = $row["name"];
+            $todoIndex++;
+        }
+        var_dump($toDos);
+        return $toDos;
+        
     }
 }
