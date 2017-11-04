@@ -36,7 +36,6 @@ class DatabaseManager
             $toDos[$todoIndex] = $row["name"];
             $todoIndex++;
         }
-        var_dump($toDos);
         return $toDos;
         
     }
