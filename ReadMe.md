@@ -1,8 +1,9 @@
-#Todo-PHP-Learning
-This is a simple project that is used to learn some php basics.
-The goal is to create a small ToDo app.
+# Todo-PHP-Learning
 
-##Setup
+Dies ist ein kleines PHP Projekt das verwendet wird um die Grundlagen von PHP zu erlernen.
+Das Ziel ist es eine simple TODO-App zu erstellen
+
+## Setup
 
 ### Php
 Um dieses Tool verwenden zu können muss die sqlite Erweiterung aktiviert sein.
