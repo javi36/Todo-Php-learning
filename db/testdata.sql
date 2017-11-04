@@ -1,0 +1,6 @@
+INSERT INTO TODO VALUES (NULL, 'Math lernen');
+INSERT INTO TODO VALUES (NULL, 'Php Projekt');
+INSERT INTO TODO VALUES (NULL, 'Deutsch Aufgaben');
+INSERT INTO TODO VALUES (NULL, 'Physik Experiment');
+INSERT INTO TODO VALUES (NULL, 'Chemie Bericht');
+

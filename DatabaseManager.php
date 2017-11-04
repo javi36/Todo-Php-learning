@@ -7,13 +7,13 @@
  */
 class DatabaseManager
 {
-    private const connectionString = "ToDoDb.sqlite";
+    private const SQLITE_DATABASE_FILE = "ToDoDb.sqlite";
     private static $connection;
 
     public static function getConnection(): SQLite3
     {
         if (!self::$connection) {
-            self::$connection = new SQLite3(self::connectionString) or die("failed connection Database");
+            self::$connection = new SQLite3(self::SQLITE_DATABASE_FILE) or die("failed connection Database");
         }
         return self::$connection;
     }
