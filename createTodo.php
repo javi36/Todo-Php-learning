@@ -8,5 +8,5 @@ include_once "DatabaseManager.php";
  */
 $toDoName = $_POST["toDoName"];
 DatabaseManager::saveTodo($toDoName);
-DatabaseManager::readAllToDOs();
 echo("createTodo has been called, the todo name is: ".$toDoName);
+header("location: /todo.htm.php");
